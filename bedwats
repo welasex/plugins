@@ -73,9 +73,6 @@ shop:
 items:
   jointeam: COMPASS
   leavegame: SLIME_BALL
-  startgame: DIAMOND
-  shopback: BARRIER
-  shopcosmetic:
     ==: org.bukkit.inventory.ItemStack
     type: STAINED_GLASS_PANE
     damage: 7
@@ -130,46 +127,7 @@ specials:
     width: 5
     height: 3
     distance: 2
-    material: SANDSTONE
-  tnt-sheep:
-    speed: 2.0
-    follow-range: 10.0
-    max-target-distance: 32
-    explosion-time: 8
-  arrow-blocker:
-    protection-time: 10
-    delay: 5
-  warp-powder:
-    teleport-time: 6
-    delay: 0
-  magnet-shoes:
-    probability: 75
-  golem:
-    speed: 0.25
-    follow-range: 10
-    health: 20
-    name-format: '%teamcolor%%team% Golem'
-    show-name: true
-    delay: 0
-    collidable: false
-  teamchest:
-    turn-all-enderchests-to-teamchests: true
-  throwable-fireball:
-    explosion: 3.0
-tnt:
-  auto-ignite: false
-  explosion-time: 8
-  dont-damage-placer: false
-sounds:
-  on_bed_destroyed: ENTITY_ENDER_DRAGON_GROWL
-  on_countdown: UI_BUTTON_CLICK
-  on_game_start: ENTITY_PLAYER_LEVELUP
-  on_team_kill: ENTITY_PLAYER_LEVELUP
-  on_player_kill: ENTITY_PLAYER_BIG_FALL
-  on_item_buy: ENTITY_ITEM_PICKUP
-  on_upgrade_buy: ENTITY_EXPERIENCE_ORB_PICKUP
-  on_respawn_cooldown_wait: UI_BUTTON_CLICK
-  on_respawn_cooldown_done: ENTITY_PLAYER_LEVELUP
+    material: BLUE_WOLL
 game-effects:
   end:
     effects:
@@ -181,7 +139,6 @@ game-effects:
         ==: Color
         RED: 255
         BLUE: 255
-        GREEN: 255
       fade-colors:
       - *id002
       type: BALL
@@ -200,10 +157,10 @@ lobby-scoreboard:
   title: §eBEDWARS
   content:
   - ' '
-  - '§fMap: §2%arena%'
+  - '§fКарта: §2%arena%'
   - '§fPlayers: §2%players%§f/§2%maxplayers%'
   - ' '
-  - §fWaiting ...
+  - §fОжидание ...
   - ' '
 statistics:
   enabled: true
@@ -228,15 +185,15 @@ bossbar:
   use-xp-bar: false
   lobby:
     enable: true
-    color: YELLOW
+    color: RED
     style: SEGMENTED_20
   game:
     enable: true
-    color: GREEN
+    color: BLUE
     style: SEGMENTED_20
 holograms:
   enabled: true
-  headline: Your §eBEDWARS§f stats
+  headline: Ваша §eBEDWARS§f Статистика!
 chat:
   override: true
   format: '<%teamcolor%%name%§r> '
@@ -286,13 +243,174 @@ leaveshortcuts:
   enabled: false
   list:
   - leave
-mainlobby:
-  enabled: false
-  location: 164.57189700688693;61.0;256.5345208859137;270.74634;7.084662
-  world: world
 turnOnExperimentalGroovyShop: false
 preventSpectatorFlyingAway: false
 removePurchaseMessages: false
 disableCakeEating: true
 disableDragonEggTeleport: true
 preventArenaFromGriefing: false
+---------------------------------------------------shop----------------------------------------------------------------------------------
+data:
+- stack: "DIAMOND_SWORD;1;Мечи;Нажми для покупки оружия"
+  column: center
+  items:
+     stack:
+      type: SHEARS
+      enchants:
+       KNOCKBACK: 1
+   - price: 1 of iron
+     stack:
+      type: DIAMOND_SWORD
+      enchants:
+       DAMAGE_ALL: 1
+   - price: 3 of iron
+- stack: "BLUE_WOOL;1;Блоки;Нажми для покупки блоков"
+  linebreak: before
+  items:
+   - WOOL;4 for 2 of bronze
+     stack: GLASS
+------------------------------------------------------map-------------------------------------------------------------------------------------
+name: BedWars-1
+pauseCountdown: 60
+gameTime: 3600
+world: bedwars
+pos1: -99.69999998807907;-58.37460003728301;101.69999998807907;222.14404;-9.983144
+pos2: 100.69999998807907;406.618053322333;-98.69999998807907;38.374146;21.097107
+specSpawn: 0.37221218464817185;90.0;7.925000011920929;359.99323;22.833313
+lobbySpawn: 0.6300549810784934;118.0;0.5356991543495052;90.03836;1.1371684
+lobbySpawnWorld: bedwars
+minPlayers: 2
+teams:
+  Синие:
+    isNewColor: true
+    color: LIGHT_BLUE
+    maxPlayers: 1
+    bed: 67.0;64.0;1.0;0.0;0.0
+    spawn: 79.43224011174493;63.0;1.490127286163113;89.24426;-0.63333756
+  Красные:
+    isNewColor: true
+    color: RED
+    maxPlayers: 1
+    bed: 0.0;64.0;-66.0;0.0;0.0
+    spawn: 0.4660383002087569;63.0;-77.49514039105684;359.99426;-1.6762748
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: 82.5656929493551;62.5;1.429505028647915;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: bronze
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: 0.4954087080188029;62.5;83.4845141787916;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: bronze
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: -81.48616533447854;62.5;1.5828551306910783;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: bronze
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: 0.28378519754249765;62.5;-80.47273642877963;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: bronze
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: 44.53629019905808;64.0;-45.61640428358533;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: iron
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: 47.61034399111055;64.0;45.38305417681751;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: iron
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: -43.39205288617367;64.0;48.422394874888425;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: iron
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: -46.55338271858822;64.0;-42.30000001192093;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: iron
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: 0.500091829459761;65.0;1.4377756926431797;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: gold
+- maxSpawnedResources: -1
+  hologramEnabled: true
+  location: 0.4474088676950075;84.0;1.4080979701178946;0.0;0.0
+  customName: null
+  startLevel: 1.0
+  team: null
+  type: gold
+stores:
+- loc: -5.699999988079071;63.0;-77.3284862654098;268.5603;5.207185
+  parent: 'false'
+  shop: null
+  name: §a§lМагазин
+  type: VILLAGER
+- loc: 6.699999988079071;63.0;-77.34490905764777;90.94719;-3.5494227
+  parent: 'false'
+  shop: null
+  name: §a§lМагазин
+  type: VILLAGER
+- loc: 6.699999988079071;63.0;80.30157847063451;90.3125;4.2685227
+  parent: 'false'
+  shop: null
+  name: §a§lМагазин
+  type: VILLAGER
+- loc: 79.30000001192093;63.0;-4.699999988079071;359.0581;2.8083572
+  parent: 'false'
+  shop: null
+  name: §a§lМагазин
+  type: VILLAGER
+constant:
+  compass-enabled: inherit
+  add-wool-to-inventory-on-join: inherit
+  in-lobby-colored-leather-by-team: inherit
+  allow-crafting: inherit
+  join-randomly-after-lobby-timeout: inherit
+  join-randomly-on-lobby-join: inherit
+  keep-inventory-on-death: inherit
+  prevent-killing-villagers: inherit
+  player-drops: inherit
+  friendlyfire: inherit
+  lobbybossbar: inherit
+  bossbar: inherit
+  lobbyscoreboard: inherit
+  scoreboard: inherit
+  prevent-spawning-mobs: inherit
+  spawner-holograms: inherit
+  spawner-disable-merge: inherit
+  game-start-items: inherit
+  player-respawn-items: inherit
+  spawner-holograms-countdown: inherit
+  damage-when-player-is-not-in-arena: inherit
+  remove-unused-target-blocks: inherit
+  allow-block-falling: inherit
+  holo-above-bed: inherit
+  allow-spectator-join: inherit
+arenaTime: WORLD
+arenaWeather: default
+lobbyBossBarColor: PINK
+gameBossBarColor: default
